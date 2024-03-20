@@ -1,55 +1,70 @@
-let vogais = ['a', 'e', 'i', 'o', 'u'];
+// Declaro um array com todas as vogais;
+deixe  vogais  =  [ 'a' ,  'e' ,  'i' ,  'o' ,  'u' ] ;
 
-let consoantes = ['b', 'c', 'd', 'f', 'g',
-                'h', 'j', 'k', 'l', 'm',
-                'n', 'p', 'q', 'r', 's',
-                't', 'v', 'w', 'x', 'y', 
-                'z'];
+// Declara um array com todas as consoantes;
+deixe  consoantes  =  [ 'b' ,  'c' ,  'd' ,  'f' ,  'g' ,
+                'h' ,  'j' ,  'k' ,  'l' ,  'm' ,
+                'n' ,  'p' ,  'q' ,  'r' ,  's' ,
+                't' ,  'v' ,  'w' ,  'x' ,  'y' , 
+                'z' ] ;
 
-let texto = "O professor thiago gosta de passar atividades complicadas, porém, eu dou meu máximo para fazer"
+// Declaro o texto que será analisado;
+let  texto  =  "O professor Thiago passa atividades muito difíceis, porém eu dou o meu máximo para realizá-las" ;
 
-texto = texto.toLowerCase('');
+// Utiliza o comando ".normalize()" que -
+// utiliza o código Unicode (basicamente -
+// é um esquema de planejamento que inclui quase todos -
+//as línguas vivas do mundo) para converter os caracteres -
+// com acentos. "NFD" serve para manter os caracteres separados;
+deixe  texto2  =  texto . normalizar ( "NFD" ) ;
 
-let dividirTexto = texto.split('');
+// Utiliza o comando ".toLowerCase()" -
+// para fazer com que o programa entenda -
+// todas as letras do texto como minúsculas;
+texto2  =  texto2 . toLowerCase ( '' ) ;
 
-let vogaisTotais = [];
+// Utiliza o método ".split()" para dividir uma string;
+deixe  dividirTexto  =  texto2 . dividir ( '' ) ;
 
-let consoantesTotais = [];
+// Aqui eu declaro todas as variáveis;
+deixe  espaço  =  " " ;
 
-let espacosTotais = [];
+deixe  vogaisTotais  =  [ ] ;
 
-let numeroConsoantes = [];
+deixe  consoantesTotais  =  [ ] ;
 
-let numeroVogais = []; 
+deixe  espaçosTotais  =  [ ] ;
 
-for(let i = 0; i < dividirTexto.length; i++){
-    if(vogais.includes(dividirTexto[i])){
-        vogaisTotais.push(dividirTexto[i]);
+deixe  numeroConsoantes  =  [ 0 ] ;
+
+deixe  numeroVogais  =  [ 0 ] ; 
+
+// Aqui eu utilizo diversos laços de "for" para -
+// considere o valor correspondente a todas as variáveis;
+for ( let  i  =  0 ;  i  <  dividirTexto . length ;  i ++ ) {
+    if ( vogais . inclui ( dividirTexto [ i ] ) ) {
+        vogaisTotais . push ( dividir Texto [ i ] ) ;
+        numeroVogais ++ ;
     }
 }
 
-for(let c = 0; c < dividirTexto.length; c++){
-    if(consoantes.includes(dividirTexto[c])){
-        consoantesTotais.push(dividirTexto[c]);
+for ( let  c  =  0 ;  c  <  dividirTexto.length ; c ++ ) {​​ 
+    if ( consonâncias . inclui ( dividirTexto [ c ] ) ) {
+        consoantesTotais . push ( dividir Texto [ c ] ) ;
+        numeroConsoantes ++ ;
     }
 }
 
-for(let b = 0; b < dividirTexto.length; b++){
-    if(espacosTotais.includes(dividirTexto[b])){
-        espacosTotaisTotais.push(dividirTexto[b]);
-    }
+for  ( let  b  =  0 ;  b  <  dividirTexto.length ; b ++ ) {​​  
+  if  ( dividirTexto [ b ]  ==  espaço )  {
+    espaçosTotais ++
+  }
 }
 
-for(let d = 0; d < dividirTexto.length; d++){
-    if(numeroConsoantes.includes(dividirTexto[d])){
-        numeroConsoantes.push(dividirTexto[d]);
-    }
-}
-
-
-console.log("Texto inserido " + texto);
-console.log("Vogais encontradas: " + vogaisTotais);
-console.log("Consoantes encontradas: " + consoantesTotais);
-console.log("Total de vogais: "   );
-console.log("Total de consoantes: " + numeroConsoantes.length);
-console.log("Total de espacos: " + espacosTotais.length);
+// Exibo as mensagens comentadas;
+console . log ( "Texto inserido: "  +  texto ) ;
+console . log ( "Vogais encontrados: "  +  vogaisTotais ) ;
+console . log ( "Consoantes descobertas: "  +  consoantesTotais ) ;
+console . log ( "Total de vogais: "  +  numeroVogais ) ;
+console . log ( "Total de consoantes: "  +  numeroConsoantes ) ;
+console . log ( "Total de espaços: "  +  espaçosTotais ) ;
